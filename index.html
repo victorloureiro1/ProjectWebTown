@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website responsivo com videos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="bannerVideo" id="slideShow">
+            <video src="video212.mp4" autoplay muted loop width="1360" height="768" class="active"></video>
+            <video src="video22.mp4" autoplay muted loop width="1360" height="768"></video>
+            <video src="video32.mp4" autoplay muted loop width="1360" height="768"></video>
+            <video src="video52.mp4" autoplay muted loop width="1360" height="768"></video>
+        </div>
+        <div class="container">
+            <header id="navbar">
+                <a href="#" class="logo">Mundo Loureiro</a>
+                <ul>
+                    <li><a href="#" class="active">Home</a> </li>
+                    <li><a href="#">Destino</a> </li>
+                    <li><a href="#">Sobre</a> </li>
+                    <li><a href="https://github.com/victorloureiro1">Contato</a> </li>
+                </ul>
+               </header>
+               <div class="content" >
+                   <div class="bannerText" id="slideShowText">
+                       <div class="active">
+                           <h2>Rio de Janeiro</h2>
+                           <p>O Rio de Janeiro é um estado brasileiro situado na região Sudeste do país. É a quarta menor unidade da federação em área, mas a terceira mais populosa, reunindo 17,3 milhões de habitantes. Sua capital já foi também sede do governo brasileiro, entre 1763 e 1960.</p>
+                       </div>
+                       <div>
+                        <h2>Miami</h2>
+                        <p>Miami é uma cidade internacional no extremo sudeste da Flórida. Sua influência cubana se reflete nos cafés e lojas de charutos que ocupam a Calle Ocho, em Little Havana. Nas águas de cor azul-turquesa da Biscayne Bay ficam Miami Beach e South Beach, um bairro glamouroso conhecido por suas construções coloridas em art déco, areia branca, hotéis para surfistas e casas noturnas famosas.</p>
+                    </div>
+                    <div>
+                        <h2>Veneza</h2>
+                        <p>Veneza, a capital da região de Vêneto, no norte da Itália, é formada por mais de 100 pequenas ilhas em uma lagoa no Mar Adriático. A cidade não tem estradas, apenas canais (como a via Grand Canal), repletos de palácios góticos e renascentistas. Na praça central, Piazza San Marco, ficam a Basílica de São Marcos, coberta de mosaicos bizantinos, e o campanário, com vista para os telhados vermelhos da cidade.</p>
+                    </div>
+                    <div>
+                        <h2>Singapura</h2>
+                        <p>Cingapura, uma cidade-estado insular situada ao sul da Malásia, é um centro financeiro global com clima tropical e população multicultural. Seu centro colonial gira em torno do Padang, um campo de críquete da década de 1830 que, hoje, é ladeado por grandes construções como a Prefeitura, com 18 colunas coríntias. Em Chinatown, que surgiu por volta de 1820, fica o Buddha Tooth Relic Temple, em vermelho e dourado, que supostamente abriga um dos dentes de Buda.</p>
+                    </div>
+               </div>
+        </div>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/victor.loureiro.73/"><img src="facebook.png" ></a></li>
+            <li><a href="https://twitter.com/vitinloureiro"><img src="twitter.png" ></a></li>
+            <li><a href="https://www.instagram.com/victorloureirosl/"><img src="instagram.png" ></a></li>
+    </ul>
+    <ul class="controls">
+        <li onclick="prevSlide();prevSlideText();"><img src="left.png" ></li>
+        <li onclick="nextSlide();nextSlideText();"><img src="right.png" ></li>
+    </ul>
+    </div>
+    </section>
+
+    <script>
+        const slideShow = document.getElementById('slideShow');
+        const slides = slideShow.getElementsByTagName('video');
+        var index = 0;
+        function nextSlide(){
+            slides[index].classList.remove('active');
+            index = (index + 1 ) % slides.length;
+            slides[index].classList.add('active');
+        }
+        function prevSlide(){
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        const slideShowText = document.getElementById('slideShowText');
+        const slidesText = slideShowText.getElementsByTagName('div');
+        var i = 0;
+        function nextSlideText(){
+            slidesText[i].classList.remove('active');
+            i = (i + 1 ) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+        function prevSlideText(){
+            slidesText[i].classList.remove('active');
+            i = (i - 1 + slidesText.length) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
